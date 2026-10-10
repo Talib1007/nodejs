@@ -1,0 +1,5 @@
+helo world asyn
+10/1/2026, 9:48:13 PMhey there
+10/1/2026, 9:48:47 PM  hey there
+10/1/2026, 9:50:02 PM  hey there
+ new Date().toLocaleString()  hey there
