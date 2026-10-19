@@ -1,0 +1,31 @@
+const mongoose=require('mongoose')  //to connect nodejs to mongodb
+
+// Schema
+const userSchema=new mongoose.Schema({
+    firstName:{
+        type:String,
+        required:true
+    },
+    lastName:{
+        type:String
+    },
+    Email:{
+        type:String,
+        required:true,
+        unique:true
+    },
+    Jobtitle:{
+        type:String
+    },
+    age:{
+        type:Number,
+        required:true
+    },
+    gender:{
+        type:String
+    }
+},{timestamps:true})
+
+const User=mongoose.model("user",userSchema)
+
+module.exports=User
