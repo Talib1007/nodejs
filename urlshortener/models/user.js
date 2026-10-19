@@ -1,24 +1,22 @@
 const mongoose=require('mongoose')
 
 const userSchema=new mongoose.Schema({
-    shortId:{
-        type:String,
+    name:{
         required:true,
+        type:string
+    },
+    email:{
+        required:true,
+        type:string,
         unique:true
     },
-    originalId:{
-         type:String,
-        required:true
-    },
-   visitedHistory: [
-    {
-        timestamp: {
-            type: Number
-        }
+    password:{
+        required:true,
+        type:string
     }
-]
-},{timestamps:true})
+},{timestamps:true}
+)
 
-const URL=mongoose.model('url',userSchema)
+const USER=mongoose.model('user',userschema)
 
-module.exports=URL
+moduke.exports=USER

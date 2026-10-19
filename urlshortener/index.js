@@ -5,6 +5,9 @@ const path=require('path')
 // for staticroute
 const staticroute=require('./routes/staticrouter/staticroute')
 
+// for implementing user signup 
+const userRoute=require('./routes/user')
+
 const urlRoute=require('./routes/user') 
 const {connectDB}=require('./connection/connect')   
 const app=express()
@@ -27,6 +30,9 @@ app.use('/url',urlRoute)
 
 // for staticroute
 app.use('/',staticroute)
+
+// for user signup
+app.use('/user',userRoute)
 
 
 app.listen(PORT,()=>{

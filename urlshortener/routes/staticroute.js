@@ -1,6 +1,6 @@
 const express=require('express')
 const router=express.Router()
-const URL=require('../../models/user')
+const URL=require('../models/user')
 
 router.get('/',async(req,res)=>{
     const allUrl=await URL.find({})
