@@ -3,7 +3,7 @@ const {handleGenerateNewShortUrl,handlerequest,handleanalytics,handlealllinks}=r
 const router=express.Router()
 
 // server side rendering
-router.get('/test',handlealllinks)
+router.get('/server/test',handlealllinks)
 
 router.post('/',handleGenerateNewShortUrl)
 router.get('/:shortId',handlerequest)

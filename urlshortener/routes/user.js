@@ -1,8 +1,10 @@
 const express=require('express')
-const handleUserSignup=require('../contollers/user')
+const {handleUserSignup,handleUserLogin}=require('../controllers/user')
 const router=express.Router()
 
 router.post('/',handleUserSignup)
 
+//  for login
+router.post('/login',handleUserLogin)
 
 module.exports=router

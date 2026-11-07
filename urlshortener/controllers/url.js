@@ -1,7 +1,7 @@
 const crypto = require('crypto');
 
 
-const URL=require('../models/user')
+const URL=require('../models/url')
 
 // generate url shortener
 async function handleGenerateNewShortUrl(req,res){
@@ -51,7 +51,7 @@ async function handleanalytics(req,res){
 // show all url with timestamps
 async function handlealllinks(req,res){
     const allUrl=await URL.find({})
-    //    res.setHeader('Content-Type', 'text/html');
+       res.setHeader('Content-Type', 'text/html');
     res.render('home',{
         urls:allUrl
     })

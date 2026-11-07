@@ -3,18 +3,27 @@ const express=require('express')
 const path=require('path')
 
 // for staticroute
-const staticroute=require('./routes/staticrouter/staticroute')
+const staticroute=require('./routes/staticroute')
 
 // for implementing user signup 
 const userRoute=require('./routes/user')
 
-const urlRoute=require('./routes/user') 
+// for cookie parser
+const coookieparser=require('cookie-parser')
+
+// for auth middleware
+const {}=require('../middleware/auth')
+
+const urlRoute=require('./routes/url') 
 const {connectDB}=require('./connection/connect')   
 const app=express()
-const PORT=5001
+const PORT=process.env.PORT || 8084
 
 // middleware to read form data
 app.use(express.urlencoded({extended:false}))
+
+// cookie parser
+app.use(cookieParser())
 
 // Middleware to read JSON request bodies
 app.use(express.json());
@@ -33,6 +42,7 @@ app.use('/',staticroute)
 
 // for user signup
 app.use('/user',userRoute)
+
 
 
 app.listen(PORT,()=>{

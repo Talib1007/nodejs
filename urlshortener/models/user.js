@@ -3,20 +3,20 @@ const mongoose=require('mongoose')
 const userSchema=new mongoose.Schema({
     name:{
         required:true,
-        type:string
+        type:String
     },
     email:{
         required:true,
-        type:string,
+        type:String,
         unique:true
     },
     password:{
         required:true,
-        type:string
+        type:String
     }
 },{timestamps:true}
 )
 
-const USER=mongoose.model('user',userschema)
+const USER=mongoose.model('user',userSchema)
 
-moduke.exports=USER
+module.exports=USER
